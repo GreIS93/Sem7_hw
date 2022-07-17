@@ -12,18 +12,18 @@ void FillArray(double[,] matrix, int start, int end)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i,j] = Convert.ToDouble(rnd.Next(start, end+1));
+            matrix[i, j] = rnd.Next(start, end) + Math.Round((rnd.NextDouble()), 1);
         }
     }
 }
 
 void PrintArray(double[,] matr)
 {
-    for (int i=0; i<matr.GetLength(0);  i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j<matr.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            Console.Write($"{Math.Round(matr[i, j],1)} ");
+            Console.Write($"{matr[i, j]} ");
         }
         Console.WriteLine();
     }
@@ -34,6 +34,6 @@ int m = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов n");
 int n = int.Parse(Console.ReadLine());
 Console.WriteLine();
-double [,] matrix = new double[m, n];
+double[,] matrix = new double[m, n];
 FillArray(matrix, -9, 10);
 PrintArray(matrix);
