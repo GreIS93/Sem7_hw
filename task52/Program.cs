@@ -36,17 +36,17 @@ void AverageOfColumn(int[,] matr1)
 {
     double sum = 0;
     double avg = 0;
-    int j=0;
-    while (j<matr1.GetLength(1))
+    int j = 0;
+    while (j < matr1.GetLength(1))
     {
-        for (int i = 0; i < matr1.GetLength(0); i++) 
+        for (int i = 0; i < matr1.GetLength(0); i++)
         {
-            sum=sum+matr1[i,j];
+            sum = sum + matr1[i, j];
         }
-        avg=sum/matr1.GetLength(1);
-        Console.WriteLine($"{(avg)}; ");
+        avg = sum / matr1.GetLength(0);
+        Console.Write($"{Math.Round(avg, 1)}; ");
         j++;
-        sum=0;
+        sum = 0;
     }
 }
 
@@ -58,4 +58,5 @@ Console.WriteLine();
 int[,] matrix = new int[m, n];
 FillArray(matrix, 0, 10);
 PrintArray(matrix);
+Console.WriteLine();
 AverageOfColumn(matrix);
